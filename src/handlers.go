@@ -1,10 +1,16 @@
-package src
+package handlers
 
 import (
 	"fmt"
 	"net/http"
 )
 
-func Homehandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, welcome to my chat api!")
+func CreateUserHandler(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Fprintln(w, "User created")
+}
+
+func DeleteUserHandler(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Fprintln(w, "User deleted")
 }

@@ -7,9 +7,7 @@ import (
 )
 
 func main() {
-
 	setupRoutes()
-
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
@@ -22,26 +20,21 @@ func setupRoutes() {
 }
 
 func createUserHandler(w http.ResponseWriter, r *http.Request) {
-
 	fmt.Fprintln(w, "User created")
 }
 
 func deleteUserHandler(w http.ResponseWriter, r *http.Request) {
-
 	fmt.Fprintln(w, "User deleted")
 }
 
 func createRoomHandler(w http.ResponseWriter, r *http.Request) {
-
 	fmt.Fprintln(w, "Room created")
 }
 
 func deleteRoomHandler(w http.ResponseWriter, r *http.Request) {
-
 	fmt.Fprintln(w, "Room deleted")
 }
 
 func sendMessageHandler(w http.ResponseWriter, r *http.Request) {
-
 	fmt.Fprintln(w, "Message sent")
 }
