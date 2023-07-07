@@ -1,4 +1,4 @@
-module api
+module github.com/ady243/go-project-chat
 
 go 1.20
 
