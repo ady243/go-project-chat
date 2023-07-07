@@ -1,8 +1,9 @@
 package main
 
 import (
-	"api/db"
 	"log"
+
+	"github.com/ady243/go-project-chat/db"
 )
 
 func main() {
