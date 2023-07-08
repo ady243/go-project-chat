@@ -23,9 +23,9 @@ func (h *Handler) CreateUser(c *gin.Context) {
 		return
 	}
 
-	res, err := h.Service.CreateUser(c, &req)
+	res, err := h.Service.CreateUser(c.Request.Context(), &req)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 
