@@ -11,6 +11,7 @@ func InitRoutes(userHandler *user.Handler) {
 	apichat = gin.Default()
 
 	apichat.POST("/signup", userHandler.CreateUser)
+
 }
 
 func Start(addr string) {
