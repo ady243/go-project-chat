@@ -4,8 +4,9 @@ import (
 	"log"
 
 	"github.com/ady243/go-project-chat/db"
+	"github.com/ady243/go-project-chat/internal/user"
+	websocket "github.com/ady243/go-project-chat/internal/webSocket"
 	"github.com/ady243/go-project-chat/router"
-	"github.com/ady243/go-project-chat/user"
 )
 
 func main() {
@@ -19,7 +20,11 @@ func main() {
 	userSrvc := user.NewService(userRepo)
 	userHandler := user.Newhandler(userSrvc)
 
-	router.InitRoutes(userHandler)
+	hub := websocket.NewHub()
+	wsHandler := websocket.NewHandler(hub)
+	go hub.Run()
+
+	router.InitRoutes(userHandler, wsHandler)
 	router.Start(":8080")
 
 }
